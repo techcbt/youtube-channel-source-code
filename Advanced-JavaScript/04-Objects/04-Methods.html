@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: defining methods in an object
+
+        //method 1
+        //define a function
+        function getAnnSal() {
+            return this.Sal * 12; //make a note about 'this' in this line
+        }
+
+        var oEmp1 = {
+            Ename:"Jag",
+            Sal:5400,
+            AnnSal:getAnnSal //attach an external function as a method in an object
+        };
+        //access members (and methods) of object
+        alert(oEmp1.Ename + " earns " +
+                oEmp1.AnnSal().toString() + " per annum."
+        );
+
+
+        //method 2 (using anonymous methods)
+        var oEmp2 = {
+            Ename:"Chat",
+            Sal:6400,
+
+            //define methods directly using anonymous function
+            AnnSal:function () {
+                return this.Sal * 12;
+            },
+            QuarterSal:function () {
+                return this.Sal * 3;
+            }
+
+        };
+        //access members (and methods) of object
+        alert(oEmp2.Ename + " earns " +
+                oEmp2.AnnSal().toString() + " per annum and earns " +
+                oEmp2.QuarterSal().toString() + " per quarter "
+        );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

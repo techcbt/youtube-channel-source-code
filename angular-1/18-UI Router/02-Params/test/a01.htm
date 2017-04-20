@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js" ></script>
+	<script type="text/javascript" src="a01.js"></script>
+	<style type="text/css">
+		.well{
+			margin-bottom:0px;
+		}
+	</style>	
+</head>
+<body ng-app="app">
+	<div class="row">
+		<div class="col-sm-12 well">
+			header | <a ui-sref='root'>Home</a>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm-3 well"  style="height: auto; min-height: 100% !important;">			
+			<ul>
+				<li><a href='#/first-msg/10/20'>Msg1</a></li>
+				<li><a href='#/second-msg/30/40'>Msg2</a></li>
+				<li><a href='#/third-msg/'>Msg3-no-param</a></li>
+				<li><a href='#/third-msg/30'>Msg3-one-param</a></li>
+				<li><a href='#/third-msg/30/40'>Msg3-two-param</a></li>
+				<li><a href='#/fourth-msg/30/40'>Msg4-two-param</a></li> <!--will not work, but ui-sref would work -->
+				<li><a href='#/fifth-msg//'>Msg5-no-param</a></li>
+				<li><a href='#/fifth-msg/5/'>Msg5-one-param</a></li>
+				<li><a href='#/fifth-msg/10/20'>Msg5-two-param</a></li>
+				<li><a href='#/sixth-msg/'>Msg6-no-param-squash-true</a></li>
+				<li><a href='#/sixth-msg/10'>Msg6-one-param-squash-true</a></li>
+				<li><a href='#/sixth-msg/10/20'>Msg6-two-param-squash-true</a></li>
+				<li><a href='#/seventh-msg/-/30'>Msg7-squash-a</a></li>
+				<li><a href='#/seventh-msg/-/~'>Msg7-squash-both</a></li>
+				<li><a href='#/eighth-msg'>Msg8-no-param</a></li>
+				<li><a href='#/eighth-msg?b=20'>Msg8-one-param</a></li>
+				<li><a href='#/eighth-msg?a=10&b=20'>Msg8-two-param</a></li>
+				<li><a href='#/ninth-msg'>Msg9-no-param</a></li>
+				<li><a href='#/ninth-msg?a=10'>Msg9-one-param</a></li>
+				<li><a href='#/ninth-msg?a=10&b=20&b=30'>Msg9-two-param-array</a></li>				
+			</ul>
+			<hr>
+			<ul>
+				<li><a ui-sref='firstMessage({a: 10, b:20})'>Msg1</a></li>
+				<li><a ui-sref='secondMessage({a: 30, b:40})'>Msg2</a></li>
+				<li><a ui-sref='thirdMessage1(null)'>Msg3-no-param</a></li>
+				<li><a ui-sref='thirdMessage1({a: 30, b:null})'>Msg3-one-param</a></li>
+				<li><a ui-sref='thirdMessage2({a: 30, b:null})'>Msg3-one-param</a></li>
+				<li><a ui-sref='thirdMessage2({a: 30, b:40})'>Msg3-two-param</a></li>
+				<li><a ui-sref='fourthMessage(null)'>Msg4-no-param</a></li>
+				<li><a ui-sref='fourthMessage({a: 30, b:null})'>Msg4-one-param</a></li>
+				<li><a ui-sref='fourthMessage({a: 30, b:40})'>Msg4-two-param</a></li>
+				<li><a ui-sref='eighthMessage(null)'>Msg8-no-param</a></li>
+				<li><a ui-sref='eighthMessage({b:20, b:null})'>Msg8-one-param</a></li>
+				<li><a ui-sref='eighthMessage({a: 10, b:20})'>Msg8-two-param</a></li>
+				<li><a ui-sref='ninthMessage(null)'>Msg9-no-param</a></li>
+				<li><a ui-sref='ninthMessage({a:10, b:null})'>Msg9-one-param</a></li>
+				<li><a ui-sref='ninthMessage({a: 10, b:[20,30]})'>Msg9-two-param-array</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9 well" style="height: auto; min-height: 100% !important;">
+			<div ui-view></div>
+		</div>
+	</div>	
+</body>
+</html>

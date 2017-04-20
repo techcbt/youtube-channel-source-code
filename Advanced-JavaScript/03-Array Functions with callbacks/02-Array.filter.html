@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Callback function to work with Array.filter method
+
+        //"Array.filter" method returns a new array that meet the condition specified in a callback function
+
+        //The callback function need to take three arguments (value, index and array)
+        function isEven(v, i, ary) {
+            //return true if division by two is zero, else return false
+            return (v % 2 == 0) ? true : false;
+        }
+
+        //define array
+        var a = [2, 45, 26, 39, 12, 7, 9];
+        //execute "filter" method by passing callback function
+        var b  = a.filter(isEven); //"b" is new array with filtered elements from array "a"
+        alert(b); //displays "2,6,12"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

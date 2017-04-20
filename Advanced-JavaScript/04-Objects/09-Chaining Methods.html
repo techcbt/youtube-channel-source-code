@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //DEMO: chaining methods
+
+        //create function
+        var Emp = function (vEmpno, vEname, vSal) {
+            this.Empno = vEmpno;
+            this.Ename = vEname;
+            this.Sal = vSal;
+
+            this.incrementSalary =  function (vInc) {
+                this.Sal += vInc;
+                return this; //returning "this" actually returns the current object which helps chaining of methods
+            }
+        }
+
+        //create object
+        var oEmp = new Emp(1001, "Jag", 4500);
+        oEmp.incrementSalary(500).incrementSalary(500); //calling methods in the form of a chain
+        alert(oEmp.Sal); //displays 5500
+    </script>
+</head>
+<body>
+
+</body>
+</html>

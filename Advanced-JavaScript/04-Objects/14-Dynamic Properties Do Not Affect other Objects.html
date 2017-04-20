@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //DEMO: object modified with dynamic properties/methods will not affect other objects
+
+        //create the function
+        var Emp = function (vEmpno, vEname, vSal) {
+            this.Empno = vEmpno;
+            this.Ename = vEname;
+            this.Sal = vSal;
+        };
+
+        //display properties using a function
+        function dispEmp(o){
+            if (o.AnnSal)  //check to see if "AnnSal" property exists
+                alert(o.Ename + ' earns ' + o.AnnSal().toString());
+            else
+                alert("AnnSal could not be calculated for " + o.Ename);
+        }
+
+        //create two objects
+        var oEmp1 = new Emp(1001, "Jag", 5400),
+                oEmp2 = new Emp(1002, "Chat", 6400);
+
+        //adding a new method (only) to oEmp1
+        // and this will not reflect in oEmp2 object
+        oEmp1.AnnSal = function () {
+            return this.Sal * 12;
+        };
+
+        dispEmp(oEmp1); //shows Annual salary (we added AnnSal to oEmp1)
+        dispEmp(oEmp2); //AnnSal does not exist for oEmp2 (we did not AnnSal to oEmp2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

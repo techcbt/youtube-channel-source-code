@@ -1,0 +1,13 @@
+<div>
+	<button ng-click="goBack()"><< Back</button> 
+	or 
+	<a ui-sref="calc"><< Back</a>
+	<hr>
+
+	<div ng-show="result">
+		Calculated result = {{result.data * multiplier}}
+	</div>	
+	<div ng-show="isLoading==true">
+		<span style="color:red">Loading...Please wait..</span>
+	</div> 	
+</div>

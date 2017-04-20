@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+	<div class="panel-body">
+		<div ng-show="!employee" style="color:red">
+			<span class='glyphicon glyphicon-time'></span> Loading...
+		</div>
+		<div ng-hide="!employee">
+			<div class="row">
+				<div class="col-sm-12">
+					<button class="btn btn-primary" ng-click="goBack()"><i class="glyphicon glyphicon-chevron-left"></i> Back</button>
+					<button class="btn btn-primary pull-right" ng-click="refresh()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
+				</div>
+			</div>
+			<hr>		
+			<div class="row">
+				<div class="col-sm-4"><strong>Employee No</strong></div>
+				<div class="col-sm-7">{{employee.Empno}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><strong>Name</strong></div>
+				<div class="col-sm-7">{{employee.Ename}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><strong>Salary</strong></div>
+				<div class="col-sm-7">{{employee.Sal}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><strong>Department</strong></div>
+				<div class="col-sm-7">{{employee.Deptno}}</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Anonymous Callback function to work with Array.forEach method
+
+        //define array
+        var a = [2, 45, 26];
+        //execute "forEach" method by passing callback function
+        a.forEach(function (v, i, ary) {
+            ary[i] = v + 1; //increment the current element value
+        });
+        alert(a); //displays "3, 46, 27"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

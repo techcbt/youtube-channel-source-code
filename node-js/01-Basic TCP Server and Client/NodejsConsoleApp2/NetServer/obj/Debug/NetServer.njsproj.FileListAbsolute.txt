@@ -1,0 +1,4 @@
+C:\Samples\NodejsConsoleApp2\NodejsConsoleApp2\obj\Debug\NetServer.njsprojResolveAssemblyReference.cache
+C:\Samples\NodejsConsoleApp2\NodejsConsoleApp2\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Samples\NodejsConsoleApp2\NetServer\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Samples\NodejsConsoleApp2\NetServer\obj\Debug\NetServer.njsprojResolveAssemblyReference.cache

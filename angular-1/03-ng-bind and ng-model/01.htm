@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script type="text/javascript" src="01.js"></script>
+	<!-- 
+	demonstrates "ng-bind" for one-way binding
+	- class "ng-binding" gets added (at run-time) to container element which has angular expressions
+	- class "ng-binding" gets added (at run-time) to elements having "ng-bind" attribute
+	- works only with text based HTML elements but not INPUT based elements
+-->
+</head>
+<body ng-app="app">
+	<div ng-controller="emp">
+		<div>
+			Value of a is {{a}}<br>
+			Value of b is {{b}}<br>
+		</div>
+		
+		<hr>
+		Value of a is <span ng-bind="a"></span><br>
+		Value of b is <span ng-bind="b"></span><br>
+	</div>
+</body>
+</html>

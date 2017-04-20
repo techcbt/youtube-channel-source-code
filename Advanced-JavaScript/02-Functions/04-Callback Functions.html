@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: callback functions (functions as parameters)
+
+        //function accepting another function (doProcessAfter) as parameter
+        function DoProcess(a, b, doProcessAfter) {
+            alert("Sum = " + (a + b).toString());
+            //calling/executing the function passed as parameter
+            doProcessAfter(a, b); //callback
+        }
+
+        //function which (itself) is passed as parameter (to DoProcess)
+        function ShowDifference(p, q) {
+            alert("Difference = " + (p - q).toString());
+        }
+
+        //function which (itself) is passed as parameter (to DoProcess)
+        function ShowMultiplied(m, n) {
+            alert("Multiplied = " + (m * n).toString());
+        }
+
+    </script>
+</head>
+<body>
+<!--Calling a function and passing a function as parameter (for callback)-->
+<input type="button" value="Show" onclick="DoProcess(10, 20, ShowDifference);"/><br>
+<!--passing a different function as parameter -->
+<input type="button" value="Another Show" onclick="DoProcess(10, 20, ShowMultiplied);"/><br>
+<!--Calling a function and passing an anonymous function as parameter -->
+<input type="button" value="Just Another Show" onclick="DoProcess(10, 20, function(p, q){alert('Difference = ' + (p-q).toString());} );"/><br>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Nested or inner functions
+
+        function doProcess(a, b) {
+
+            //this function is not available outside doProcess (private to doProcess only)
+            function dispSum() {
+                alert("Sum = " + (a + b).toString());
+            }
+
+            //this function is not available outside doProcess (private to doProcess only)
+            function dispDifference() {
+                alert("Difference = " + (a - b).toString());
+            }
+
+            dispSum();
+            dispDifference();
+        }
+
+        //doProcess(); valid
+        //dispSum(); //CANNOT call this way - dispSum is not available out side doProcess
+        //dispDifference(); //CANNOT call this way - dispDifference is not available out side doProcess
+
+    </script>
+</head>
+<body>
+<input type="button" value="Show" onclick="doProcess(10,20);" />
+</body>
+</html>

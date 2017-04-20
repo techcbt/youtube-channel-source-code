@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Employee details
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-2">Employee No</div>
+			<div class="col-sm-2">{{empno}}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">Name</div>
+			<div class="col-sm-2">{{ename}}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">Salary</div>
+			<div class="col-sm-2">{{sal}}
+				<span ng-hide="sal == undefined || sal <= 7000" class="glyphicon glyphicon-warning-sign"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">Hire Date</div>
+			<div class="col-sm-2">{{hiredate}}</div>
+		</div>				
+		<div class="row">
+			<div class="col-sm-2">DOB</div>
+			<div class="col-sm-2">{{dob}}</div>
+		</div>				
+		<div class="row">
+			<div class="col-sm-2">Department</div>
+			<div class="col-sm-2">{{deptno}}</div>
+		</div>	
+	</div>
+</div>

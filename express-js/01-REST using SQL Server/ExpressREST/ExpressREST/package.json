@@ -1,0 +1,15 @@
+{
+  "name": "ExpressREST",
+  "version": "0.0.0",
+  "description": "ExpressREST",
+  "main": "app.js",
+  "author": {
+    "name": "Personal",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "express": "^4.13.3",
+    "mssql": "^2.3.1"
+  }
+}

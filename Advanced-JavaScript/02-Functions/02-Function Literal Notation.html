@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Function Literals or Anonymous Functions and Function Expressions
+
+        //basic anonymous function (or Function Literal) assigned to a variable with no parameters
+        //also called Function Expression
+        var f1 = function() {
+            alert("This is a message");
+        }
+
+        //anonymous function with parameters
+        var f2 = function(a, b) {
+            alert("Sum = " + (a + b).toString());
+        }
+
+        //anonymous function with 'n' (any number) parameters
+        var f3 = function() {
+            var s = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                s += s + arguments[i];
+            }
+            alert("Total Sum = " + s.toString());
+        }
+
+        //anonymous function returning value
+        var f4 = function (a, b) {
+            var c = 0;
+            c = a - b;
+            return (c);
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="Show Message" onclick="f1();"/><br>
+<input type="button" value="Show Sum" onclick="f2(10,20);"/><br>
+<input type="button" value="Show Total Sum" onclick="f3(10,20,30,40,50);"/><br>
+<input type="button" value="Show Difference" onclick="alert('Difference = ' + f4(20, 10).toString());"/><br>
+</body>
+</html>

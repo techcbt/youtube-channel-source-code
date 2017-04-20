@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Callback function to work with Array.map method
+
+        //"Array.map" method executes callback function for every element present in the array and
+        //gives a new array with processed element (returned value) for the corresponding source array element
+
+        //The callback function need to take three arguments (value, index and array)
+        function doProcess(v, i, ary) {
+            return v * v; //new element in 'i'th location of new array
+        }
+
+        //define array
+        var a = [2, 25, 10];
+        //execute "map" method by passing callback function
+        var b = a.map(doProcess);
+        alert(b); //displays "4, 625, 100"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

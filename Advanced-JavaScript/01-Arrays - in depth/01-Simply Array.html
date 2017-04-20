@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script language="JavaScript" type="text/javascript">
+        //Declare & Initialize an array - the traditional way
+        var ar1 = Array(4);
+        ar1[0] = "Jag1";
+        ar1[1] = "Chat1";
+        ar1[2] = "Win1";
+        ar1[3] = "Dhan1";
+
+        //function to display elements of an array passed as parameter
+        function displayArray() {
+            var n = ar1.length; //no. of items
+
+            //get div (parent div which contains child divs for each item in array)
+            var ResultsDiv = document.getElementById("ResultsDiv");
+
+            //iterate through each element in the array
+            for (var i = 0; i < n; i++) {
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+                //set the message to show in newly created div
+                NewDiv.innerHTML = "Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + ar1[i];
+				//hook up newly created div as a child to (parent) div
+                ResultsDiv.appendChild(NewDiv); 
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+<input type="button" value="Show Array" onclick="displayArray();"/>
+<hr>
+<div id="ResultsDiv"></div>
+</body>

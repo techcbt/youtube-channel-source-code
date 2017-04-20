@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script type="text/javascript">
+  //root scope
+  //the scope available at module level
+
+  var sample = angular.module("sample", []);
+
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+  }]);
+
+  sample.controller("empDetails", ["$scope", "$rootScope", function($scope, $rootScope) {
+    $scope.Sal = 3400;
+    $scope.Dept = "Sales";
+    $rootScope.TaxPercent = 30;
+  }]);
+
+  sample.controller("empPayCheck", ["$scope", "$rootScope", function($scope, $rootScope) {
+    $scope.getTaxes = function(){
+      return $scope.Sal * $rootScope.TaxPercent / 100;
+    };
+    $scope.getNet = function(){
+      return $scope.Sal - $scope.getTaxes();
+    };
+  }]);
+
+  </script>
+</head>
+<body ng-app="sample">
+  <div ng-controller="emp">
+    Employee Details of {{Name}}:
+    <div ng-controller="empDetails">
+      <!-- parent scope is merged to child scope
+        - child properties get the priority -->
+      <strong>{{Name}}</strong> earns {{Sal}} and works in {{Dept}} department.
+      <div ng-controller="empPayCheck">
+        Taxes: {{getTaxes()}}<br>
+        Net: {{getNet()}}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript">		
+		
+		//--> 	"ng-app" stands for angular application.  
+		//		-It is the root of angular application (starting at the element associated, "body" in this case).  
+		//		-Usually one per web page / app (other workarounds available for multiple "ng-app")
+		//		-Cannot be nested
+		//		-Can be attached to any element, but usually to HTML or BODY
+		//		-Usually attached to an angular module (called "root module")
+
+		//-->	angular.module = all application logic under one umbrella. 
+		//		-passing second parameter means, you are creating new module
+		//		-empty square brackets means, the module has no dependencies (to load)
+		//		-currently, the "sample" module is attached as "root module" (using ng-app)
+        angular.module("sample", []); 		
+		//-->	not passing second parameter means, 
+		//		-search for and use existing module, which was already created earlier or in another file
+		//angular.module("sample"); 
+
+		//-->	{{ }} = angular expression
+		//		javascript-like code snippets, evaulated by angular
+		//		control flow statements, functions etc. NOT allowed
+    </script>
+  </head>
+  <body ng-app="sample"> 
+    Sum of 1 + 2 is {{ 1 + 2}}
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+	<div class="panel-body">
+		<div ng-show="!result" style="color:red">
+			<span class='glyphicon glyphicon-time'></span> Loading...
+		</div>
+		<div ng-hide="!result">
+			<div class="row">
+				<div class="col-sm-6">
+					Deptno: <input type="text" ng-model="deptno">
+					<button class="btn btn-primary pull-right" ng-click="search()"><i class="glyphicon glyphicon-search"></i></button>
+				</div>
+				<div class="col-sm-6">
+					<button class="btn btn-primary pull-right" ng-click="refresh()"><i class="glyphicon glyphicon-refresh"></i> Refresh</button>
+				</div>
+			</div>
+			<hr>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Salary</th>				
+						<th>Dept</th>
+					</tr>
+				</thead>
+				<tbody>		
+					<tr ng-repeat="oEmp in result.data" ng-click="showDetails(oEmp)">
+						<td>{{oEmp.Empno}}</td>
+						<td>{{oEmp.Ename}}</td>
+						<td>{{oEmp.Sal}}</td>
+						<td>{{oEmp.Deptno}}</td>
+					</tr>			
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

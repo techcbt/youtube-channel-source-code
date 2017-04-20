@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //DEMO: nested objects in constructor functions
+
+        var Emp = function (vName, vSal, vDeptno, vDname) {
+            this.Ename = vName;
+            this.Sal = vSal;
+
+            //nested object
+            this.Dept = {
+                Deptno:vDeptno,
+                Dname:vDname
+            };
+
+        };
+
+        //create object
+        var oEmp = new Emp("Jag", 5400, 10, "IT");
+        //accessing property of nested object from parent object
+        alert(oEmp.Ename + " works in " + oEmp.Dept.Dname);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

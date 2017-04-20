@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //Declare & Initialize an Associative array
+        var emp = [];
+        emp["Empno"] = 1001; //first key/value pair
+        emp["Name"] = "Jag"; //second key/value pair
+        emp["Sal"] = 5400.00;
+        emp["Dept"] = "Accounting";
+
+        function displayEmp() {
+			
+			var ResultsDiv = document.getElementById("ResultsDiv");
+			
+            for (key in emp) { //for every iteration, get the key
+                //create a new div for every key/value pair
+				var NewDiv = document.createElement("div");				
+                NewDiv.innerHTML = key + ": " + emp[key]; //using key, get the value
+                ResultsDiv.appendChild(NewDiv); //add the div to results
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="Show Emp" onclick="displayEmp();"/>
+<hr>
+<div id="ResultsDiv"></div>
+
+</body>
+</html>

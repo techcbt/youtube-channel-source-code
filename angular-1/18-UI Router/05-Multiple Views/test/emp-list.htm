@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+	<div class="panel-body">
+		<div ng-show="isLoading" style="color:red">
+			<span class='glyphicon glyphicon-time'></span> Loading...
+		</div>
+		<div ng-show="!isLoading">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Salary</th>				
+						<th>Dept</th>
+					</tr>
+				</thead>
+				<tbody>		
+					<tr ng-repeat="oEmp in result.data">
+						<td><a href="#/employees/{{oEmp.Empno}}">{{oEmp.Empno}}</a></td>
+						<td>{{oEmp.Ename}}</td>
+						<td>{{oEmp.Sal}}</td>
+						<td>{{oEmp.Deptno}}</td>
+					</tr>			
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //Declare & Initialize a normal array (with various types of values)
+        var ary = [10, "Jag", 30, 40, "Chat", true];
+
+        function DisplayAryResults() {
+            var n = ary.length; //no. of items
+
+            //update the div with a message showing no. of items
+            document.getElementById("AryCount").innerHTML = "No. of Items available: " + n.toString();
+
+            //get another div (parent div which contains child divs for each item in array)
+            var AryItems = document.getElementById("AryItems");
+
+            //remove all items in the div (if available)
+            //This is only to demonstrates various functions/methods of DOM
+            while (AryItems.hasChildNodes()) {
+                AryItems.removeChild(AryItems.lastChild);
+            }
+
+            //iterate through each element in the array
+            for (var i = 0; i < n; i++) {
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+                //set the message to show in newly created div
+                NewDiv.innerHTML = "Index " + i.toString() + 
+					", Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + ary[i];
+				//hook up newly created div as a child to another (parent) div
+                AryItems.appendChild(NewDiv); 
+            }
+        }
+
+        function DoAryPush() {
+            var v = document.getElementById("txtAryValue").value;
+            ary.push(v); //adds element at the end
+            //ary.push("1", "2") //can add multiple elements at once
+            DisplayAryResults();
+        }
+
+        function DoAryPop() {
+            var itemRemoved = ary.pop(); //removes an item at the end and returns the same
+            alert(itemRemoved);
+            DisplayAryResults();
+        }
+
+        //usually slower than Push (as whole array has to me moved)
+        function DoAryUnshift() {
+            var v = document.getElementById("txtAryValue").value;
+            ary.unshift(v); //adds element at the beginning
+            //ary.unshift("1", "2") //can unshift multiple elements at once
+            DisplayAryResults();
+        }
+
+        //usually slower than Pop (as whole array has to me moved)
+        function DoAryShift() {
+			//removes an item from the beginning and returns the same
+            var itemRemoved = ary.shift(); 
+            alert(itemRemoved);
+            DisplayAryResults();
+        }
+
+        window.onload = DisplayAryResults;
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            Enter any value:
+        </td>
+        <td>
+            <input id="txtAryValue" type="text"/>
+        </td>
+        <td>
+            <input id="btnAryAdd" type="button" value="Push (the txt value)" onclick="DoAryPush();"/>
+        </td>
+        <td>
+            <input id="btnAryPop" type="button" value="Pop" onclick="DoAryPop();"/>
+        </td>
+        <td>
+            <input id="btnAryUnshift" type="button" value="Unshift (the txt value)" onclick="DoAryUnshift();"/>
+        </td>
+        <td>
+            <input id="btnAryShift" type="button" value="Shift" onclick="DoAryShift();"/>
+        </td>
+    </tr>
+</table>
+<hr/>
+<div id="AryCount"></div>
+<br/>
+
+<div id="AryItems"></div>
+
+</body>
+</html>

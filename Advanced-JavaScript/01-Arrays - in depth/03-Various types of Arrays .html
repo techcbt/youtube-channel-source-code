@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script language="JavaScript" type="text/javascript">
+        //Declare & Initialize an array - the traditional way
+        var ar1 = Array(4);
+        ar1[0] = "Jag1";
+        ar1[1] = "Chat1";
+        ar1[2] = "Win1";
+        ar1[3] = "Dhan1";
+
+        //Initialize an array with a set of values using Array (Constructor in OOPS!)
+        var ar2 = Array("Jag2", "Chat2", "Win2", "Dhan2");
+
+        //Initialize an array with a set of values using Square Brackets
+        var ar3 = ["Jag3", "Chat3", "Win3", "Dhan3"];
+
+        //various data type values in a single array
+        var ar4 = ["Jag", 2500, true];
+
+        //function to display elements of an array passed as parameter
+        function displayArray(ary) {
+            var n = ary.length; //no. of items
+
+            //get div (parent div which contains child divs for each item in array)
+            var ResultsDiv = document.getElementById("ResultsDiv");
+
+            //remove all items in the div (if available)
+            while (ResultsDiv.hasChildNodes()) {
+                ResultsDiv.removeChild(ResultsDiv.lastChild);
+            }
+
+            //iterate through each element in the array
+            for (var i = 0; i < n; i++) {
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+                //set the message to show in newly created div
+                NewDiv.innerHTML = "Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + ary[i];
+				//hook up newly created div as a child to (parent) div
+                ResultsDiv.appendChild(NewDiv); 
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+<input type="button" value="Show Array 1" onclick="displayArray(ar1);"/>
+<input type="button" value="Show Array 2" onclick="displayArray(ar2);"/>
+<input type="button" value="Show Array 3" onclick="displayArray(ar3);"/>
+<input type="button" value="Show Array 4" onclick="displayArray(ar4);"/>
+<hr>
+<div id="ResultsDiv"></div>
+</body>

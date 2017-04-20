@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NetServer", "NetServer\NetServer.njsproj", "{1AE517FA-B796-423C-A992-69C210DE6C34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpClient", "CSharpClient\CSharpClient.csproj", "{66B164F2-F72F-4AAE-9153-A95A0467C22F}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NetClient", "NetClient\NetClient.njsproj", "{4F49739C-D4F2-4066-98C3-2071B5C914C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AE517FA-B796-423C-A992-69C210DE6C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE517FA-B796-423C-A992-69C210DE6C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE517FA-B796-423C-A992-69C210DE6C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE517FA-B796-423C-A992-69C210DE6C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66B164F2-F72F-4AAE-9153-A95A0467C22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B164F2-F72F-4AAE-9153-A95A0467C22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B164F2-F72F-4AAE-9153-A95A0467C22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B164F2-F72F-4AAE-9153-A95A0467C22F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F49739C-D4F2-4066-98C3-2071B5C914C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F49739C-D4F2-4066-98C3-2071B5C914C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F49739C-D4F2-4066-98C3-2071B5C914C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F49739C-D4F2-4066-98C3-2071B5C914C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

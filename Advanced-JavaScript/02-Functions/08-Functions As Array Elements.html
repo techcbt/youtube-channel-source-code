@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: storing (anonymous) functions as elements in an array
+
+        var ary = []; //defining an array
+
+        //first element in an array
+        ary[0] = function () {
+            alert("First");
+        };
+
+        //second element in an array
+        ary[1] = function () {
+            alert("Second");
+        };
+
+        //third element in an array
+        ary[2] = function () {
+            alert("Third");
+        };
+
+        //iterate through array and execute all functions (available as elements)
+        for (var i = 0; i < ary.length; i++) {
+            ary[i](); //calls function available at i'th location in the array
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

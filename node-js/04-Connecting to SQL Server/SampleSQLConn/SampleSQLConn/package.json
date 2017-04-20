@@ -1,0 +1,13 @@
+{
+  "name": "SampleSQLConn",
+  "version": "0.0.0",
+  "description": "SampleSQLConn",
+  "main": "app.js",
+  "author": {
+    "name": "Personal",
+    "email": ""
+  },
+  "dependencies": {
+    "mssql": "^2.1.8"
+  }
+}

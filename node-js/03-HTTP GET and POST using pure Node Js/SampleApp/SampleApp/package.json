@@ -1,0 +1,13 @@
+{
+  "name": "SampleApp",
+  "version": "0.0.0",
+  "description": "SampleApp",
+  "main": "app.js",
+  "author": {
+    "name": "Personal",
+    "email": ""
+  },
+  "dependencies": {
+    "stringbuilder": "0.0.10"
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: declaring/defining/initializing objects with properties
+
+        //method 1
+        var oEmp1 = new Object();
+        oEmp1.Empno = 1001; //property name is "Empno" and the value is 1001
+        oEmp1.Ename = "Jag";
+        oEmp1.Sal = 5400;
+        oEmp1.Deptno = 10;
+
+        alert(oEmp1.Empno.toString() + ", " +
+                oEmp1.Ename + ", " +
+                oEmp1.Sal.toString() + ", " +
+                oEmp1.Deptno.toString()
+        );
+
+
+        //method 2
+        var oEmp2 = {}; //empty braces
+        oEmp2.Empno = 1002;
+        oEmp2.Ename = "Jag";
+        oEmp2.Sal = 5400;
+        oEmp2.Deptno = 10;
+
+        alert(oEmp2.Empno.toString() + ", " +
+                oEmp2.Ename + ", " +
+                oEmp2.Sal.toString() + ", " +
+                oEmp2.Deptno.toString()
+        );
+
+
+        //method 3 (using key/value pair notation to define properties/values)
+        var oEmp3 = {
+            Empno:1003,
+            Ename:"Jag",
+            Sal:5400,
+            Deptno:10
+        };
+        //keys can be optionally placed in quotes/double quotes (if necessary)
+
+        alert(oEmp3.Empno.toString() + ", " +
+                oEmp3.Ename + ", " +
+                oEmp3.Sal.toString() + ", " +
+                oEmp3.Deptno.toString()
+        );
+
+        //accessing object properties using array notation
+        alert(oEmp3["Empno"].toString() + ", " +
+                oEmp3["Ename"] + ", " +
+                oEmp3["Sal"].toString() + ", " +
+                oEmp3["Deptno"].toString()
+        );
+
+        //accessing object properties using a loop
+		var result = "";
+        for (p in oEmp3) {
+			result += "oEmp3." + p + " = " + oEmp3[p] + "\n";
+        }
+		alert(result);
+		
+		//using Object.keys
+		alert(Object.keys(oEmp3));
+		//or
+		var result2 = "";
+        for (var i=0;i< Object.keys(oEmp3).length;i++) {
+			result2 += Object.keys(oEmp3)[i] + "\n";
+        }
+		alert(result2);
+		
+		
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

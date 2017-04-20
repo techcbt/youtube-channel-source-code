@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+        //Declare & Initialize a normal array (with various types of values)
+        var ary = [10, "Jag", 30, 40, "Chat", "Jag", true];
+
+        function DisplayAryResults(pAry) {
+            var n = pAry.length; //no. of items
+            //get another div (parent div which contains child divs for each item in array)
+            var AryItems = document.getElementById("AryItems");
+            //remove all items in the div (if available)
+            //This is only to demonstrates various functions/methods of DOM
+            while (AryItems.hasChildNodes()) {
+                AryItems.removeChild(AryItems.lastChild);
+            }
+            //iterate through each element in the array
+            for (var i = 0; i < n; i++) {
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+                //set the message to show in newly created div
+                NewDiv.innerHTML = "Index " + i.toString() +
+                    ", Item " + (i + 1).toString() +
+                    " of " + n.toString() +
+                    " is " + pAry[i];
+				//hook up newly created div as a child to another (parent) div
+                AryItems.appendChild(NewDiv); 
+            }
+        }
+
+        function DisplayConcatResult() {
+            var ary2 = [90, "Win", false];
+            var ary3 = [11, 22, "Dhan", true, 55];
+
+            //var newAry1 = ary.concat(ary2); //concats ary with ary2 and results out a new array
+            //DisplayAryResults(newAry1);
+
+            //can also do this
+            var newAry2 = ary.concat(ary2, ary3); //can concat multiple arrays
+            DisplayAryResults(newAry2);
+        }
+
+
+        function DoSearchItem(){
+            var v = document.getElementById("txtSearchItem").value;
+            //searches (ONLY string based) value 'v' (from pos 0) in 'ary' and returns position
+            //var p = ary.indexOf(v);
+
+            //searches (ONLY string based) value 'v' (from specified pos) in 'ary' and returns position
+            var p = ary.indexOf(v, 3);
+            alert("Position: " + p); //-1 if not found
+        }
+
+        function DoSearchFromLast(){
+            var v = document.getElementById("txtSearchItem").value;
+            //searches (ONLY string based) value 'v' (from pos 0) in 'ary', from the last end and returns position
+            //var p = ary.lastIndexOf(v);
+
+            //searches (ONLY string based) value 'v' (from specified pos) in 'ary', from last end and returns position
+            var p = ary.lastIndexOf(v, 3);
+            alert("Position: " + p); //-1 if not found
+        }
+
+    </script>
+</head>
+<body>
+<input id="btnShow" type="button" value="Show" onclick="DisplayAryResults(ary);"/>
+<input id="btnAryConcat" type="button" value="Concat" onclick="DisplayConcatResult();"/>
+<hr>
+Enter item to search:
+<input type="text" id="txtSearchItem" />
+<input id="btnSearch" type="button" value="Search" onclick="DoSearchItem();"/>
+<input id="btnSearchFromEnd" type="button" value="Search From Last" onclick="DoSearchFromLast();"/>
+<hr>
+<div id="AryItems"></div>
+</body>
+</html>

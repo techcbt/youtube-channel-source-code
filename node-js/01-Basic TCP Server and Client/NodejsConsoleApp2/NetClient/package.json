@@ -1,0 +1,14 @@
+{
+  "name": "NetClient",
+  "version": "0.0.0",
+  "description": "NetClient",
+  "main": "app.js",
+  "author": {
+    "name": "Personal",
+    "email": ""
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "readline-sync": "^1.2.19"
+  }
+}

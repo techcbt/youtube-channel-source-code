@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //Declare & Initialize an Associative array
+        var emp = [];
+        emp["Empno"] = 1001; //first key/value pair
+        emp["Name"] = "Jag"; //second key/value pair
+        emp["Sal"] = 5400.00;
+        emp["Dept"] = "Accounting";
+
+        function btn1Click(){
+			//gives 0 (string based indexes do not count in length)
+            alert(emp.length); 
+        }
+
+        var ary1 = [];
+        ary1[3] = "something";
+
+        function btn2Click(){
+			//gives 4 (if new index is used, it allocates for all previous index automatically)
+            alert(ary1.length); 
+        }
+
+        var ary2 = [];
+        ary2[3] = "something";
+        ary2["Name"] = "Some Name";
+
+        function btn3Click(){
+			//still gives 4 (string based indexes do not cound in length)
+            alert(ary2.length); 
+        }
+
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="Button 1" onclick="btn1Click();"/>
+<input type="button" value="Button 2" onclick="btn2Click();"/>
+<input type="button" value="Button 3" onclick="btn3Click();"/>
+<hr>
+<div id="ResultsDiv"></div>
+
+</body>
+</html>

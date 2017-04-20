@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script type="text/javascript">
+  //Hybrid syntax oc $scope and "controller as"
+
+  //Technically, "controller as" object is automatically made part of $scope
+  //but for our clarity, we can still use scope and "controller as" as below
+  var sample = angular.module("sample", []);
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.o = this; //controller as "o" becomes the member of $scope
+    this.Name = "Jag";
+    this.Sal = 4500;
+    this.getAnnualSal = function(){
+      return (this.Sal) * 12;
+    };
+  }]);
+  </script>
+</head>
+<body ng-app="sample">
+  <div ng-controller="emp as o"> <!--using controller as -->
+    Hello {{o.Name}}, your annual salary is {{o.getAnnualSal()}}!
+  </div>
+</body>
+</html>

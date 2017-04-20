@@ -1,0 +1,6 @@
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\bin\Debug\CSharpConsoleTcpClient.exe.config
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\bin\Debug\CSharpConsoleTcpClient.exe
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\bin\Debug\CSharpConsoleTcpClient.pdb
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.csprojResolveAssemblyReference.cache
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.exe
+C:\Samples\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.pdb

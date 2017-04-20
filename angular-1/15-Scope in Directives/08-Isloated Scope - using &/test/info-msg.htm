@@ -1,0 +1,15 @@
+<div>
+	p = {{p}}, q = {{q}}<br>
+	p: <input ng-model="p" />, q: <input ng-model="q" /> <br>
+	
+	<!-- first way (with first way in markup)-->
+	<!-- <button ng-click="extSum({m:p, n:q})">Sum</button> -->
+	<!-- <button ng-click="doProcess()">Sum from Controller</button> -->
+
+	<!-- second way (with second way in markup-->
+	<button ng-click="extSum()(p, q)">Sum</button><br>
+	<button ng-click="doProcess2()">Sum from Controller</button><br>
+
+	<!--still can access parent scope in isolated scope (but, try avoiding this) -->
+	<!-- a = {{$parent.a}}, b = {{$parent.b}} -->
+</div>

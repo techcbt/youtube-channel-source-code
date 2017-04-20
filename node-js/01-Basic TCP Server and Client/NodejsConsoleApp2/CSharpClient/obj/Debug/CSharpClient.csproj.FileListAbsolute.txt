@@ -1,0 +1,6 @@
+C:\Samples\NodejsConsoleApp2\CSharpClient\bin\Debug\CSharpClient.exe.config
+C:\Samples\NodejsConsoleApp2\CSharpClient\bin\Debug\CSharpClient.exe
+C:\Samples\NodejsConsoleApp2\CSharpClient\bin\Debug\CSharpClient.pdb
+C:\Samples\NodejsConsoleApp2\CSharpClient\obj\Debug\CSharpClient.exe
+C:\Samples\NodejsConsoleApp2\CSharpClient\obj\Debug\CSharpClient.pdb
+C:\Samples\NodejsConsoleApp2\CSharpClient\obj\Debug\CSharpClient.csprojResolveAssemblyReference.cache

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //DEMO: using constructors functions to define objects
+
+        //defining a (class/function) constructor accepting 4 parameters
+        function Emp(vEmpno, vEname, vSal, vDeptno) {
+            this.Empno = vEmpno;
+            this.Ename = vEname;
+            this.Sal = vSal;
+            this.Deptno = vDeptno;
+        }
+
+		////defining a (class/anonymous function) constructor accepting 4 parameters
+        //var Emp = function (vEmpno, vEname, vSal, vDeptno) {
+        //    this.Empno = vEmpno;
+        //    this.Ename = vEname;
+        //    this.Sal = vSal;
+        //    this.Deptno = vDeptno;
+        //};
+		
+        //creating object
+        var oEmp = new Emp(1001, "Jag", 5400, 10); //calling the constructor
+
+        //accessing members of an object
+        alert(oEmp.Empno.toString() + ", " +
+                oEmp.Ename + ", " +
+                oEmp.Sal.toString() + ", " +
+                oEmp.Deptno.toString()
+        );
+
+        //parsing all members using a loop
+        for (var p in oEmp) {
+            alert(p + ' = ' + oEmp[p]);
+        }
+
+		function ShowEmp(o) {
+            //another way of accessing object members using "with" construct
+            with (o) {
+                alert(Empno.toString() + ", " +
+                        Ename + ", " +
+                        Sal.toString() + ", " +
+                        Deptno.toString()
+                );
+            }
+        }
+
+		ShowEmp(oEmp);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

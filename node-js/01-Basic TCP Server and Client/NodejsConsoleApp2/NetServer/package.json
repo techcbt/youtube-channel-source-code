@@ -1,0 +1,13 @@
+{
+  "name": "NetServer",
+  "version": "0.0.0",
+  "description": "NetServer",
+  "main": "app.js",
+  "author": {
+    "name": "Personal",
+    "email": ""
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}

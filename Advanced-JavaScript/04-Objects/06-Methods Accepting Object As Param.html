@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //DEMO: defining method which accepts object as parameter
+
+        var Emp = function () {
+            this.Ename = "";
+            this.Sal = 0;
+
+            //method accepting object as parameter
+            this.setEmployee = function (o) {
+                this.Ename = o.Ename;
+                this.Sal = o.Sal;
+            }
+
+            //method as a member
+            this.getAnnSal = function () {
+                return this.Sal * 12;
+            }
+
+        };
+
+        //create an object
+        var oEmp = new Emp();
+        oEmp.Ename = "Jag";
+        oEmp.Sal = 5400;
+
+        //create another object
+        var oEmp2 = new Emp();
+        oEmp2.setEmployee(oEmp); //call method by passing as object as parameter
+
+        //call method through object
+        alert("Annual salary: " + oEmp2.getAnnSal().toString());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

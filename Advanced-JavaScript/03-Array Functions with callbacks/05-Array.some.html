@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Callback function to work with Array.some method
+
+        //"Array.some" method returns true if any of the elements
+        // in the array are evaluated to true through a Callback function
+
+        //The callback function need to take three arguments (value, index and array)
+        function isEven(v, i, ary) {
+            //return true if division by two is zero, else return false
+            return (v % 2 == 0) ? true : false;
+        }
+
+        //define array
+        var a = [9, 37, 15, 4, 3, 11]; //all odds except one even
+        //execute "some" method by passing callback function
+        alert(a.some(isEven)); //displays "true"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

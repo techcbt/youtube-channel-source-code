@@ -1,0 +1,17 @@
+<div>
+	<hr>
+	<div ng-show="isDeptLoading" style="color:red">
+		<span class='glyphicon glyphicon-time'></span> Loading Dept details...
+	</div>
+	<div ng-show="isDeptNotFound" style="color:red">
+		<span class='glyphicon glyphicon-thumbs-down'></span> Department Not Found
+	</div>
+
+	<div ng-show="dept">
+		<div class="row">
+			<div class="col-sm-4"><strong>Dept. Name</strong></div>
+			<div class="col-sm-7">{{dept.Dname}}</div>
+		</div>
+	</div>
+	
+</div>

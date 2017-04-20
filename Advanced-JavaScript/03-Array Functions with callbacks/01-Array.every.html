@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Callback/anonymous function to work with Array.every method
+
+        //"Array.every" method returns true if all the elements
+        // in the array are evaluated to true through a Callback function
+
+        //The "Array.every" method calls Callback function one time for every array element
+        //The callback function gets executed for every element, as long as it does not evaluate to false
+        //The "every" method returns false once the callback function returns false
+        //The "every" method returns true once all elements are evaluated to true by callback function
+
+        //The callback function need to take three arguments (value, index and array)
+        function isEven(v, i, ary) {
+            //return true if division by two is zero, else return false
+            return (v % 2 == 0) ? true : false;
+        }
+
+        //define array
+        var a = [2, 26, 38, 12, 6, 8];
+        //execute "every" method by passing callback function
+        alert(a.every(isEven)); //displays "true"
+
+
+        //can also do like this
+        alert([12, 226, 738, 312, 7, 8].every(isEven)); //displays "false"
+
+
+        //can also do like this (callback using anonymous function)
+        alert([12, 226, 738, 312, 8].every(function (v, i, ary) {
+            return (v % 2 == 0);
+        })); //displays "true"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

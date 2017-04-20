@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: using Callback function to work with Array.forEach method
+
+        //"Array.forEach" method executes callback function for every element present in the array
+
+        //The callback function need to take three arguments (value, index and array)
+        function doProcess(v, i, ary) {
+            ary[i] = v + 1; //increment the current element value
+        }
+
+        //define array
+        var a = [2, 45, 26];
+        //execute "forEach" method by passing callback function
+        a.forEach(doProcess);
+        alert(a); //displays "3, 46, 27"
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

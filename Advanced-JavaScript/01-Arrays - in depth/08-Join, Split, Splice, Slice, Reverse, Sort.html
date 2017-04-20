@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //Declare & Initialize a normal array (with various types of values)
+        var ary = [10, "Jag", 30, 40, "Chat", true];
+
+        function DisplayAryResults(pAry) {
+            var n = pAry.length; //no. of items
+
+            //get another div (parent div which contains child divs for each item in array)
+            var AryItems = document.getElementById("AryItems");
+
+            //remove all items in the div (if available)
+            //This is only to demonstrates various functions/methods of DOM
+            while (AryItems.hasChildNodes()) {
+                AryItems.removeChild(AryItems.lastChild);
+            }
+
+            //iterate through each element in the array
+            for (var i = 0; i < n; i++) {
+				//create/add a new div to the document
+                var NewDiv = document.createElement("div"); 
+                //set the message to show in newly created div
+                NewDiv.innerHTML = "Index " + i.toString() + 
+					", Item " + (i + 1).toString() + 
+					" of " + n.toString() + 
+					" is " + pAry[i];
+				//hook up newly created div as a child to another (parent) div
+                AryItems.appendChild(NewDiv); 
+            }
+        }
+
+        function DisplayJoinResult() {
+            //joins all array elements with the specified separator
+			var str = ary.join(", "); 
+            alert(str);
+        }
+
+        //usually slower than Pop (as whole array has to me moved)
+        function DoArySplit() {
+            var v = document.getElementById("txtValue").value;
+            ary = v.split(","); //splits comma separated values to an array
+            DisplayAryResults(ary);
+        }
+
+        function DoSplice1() {
+			////removes 1 element starting from index 0
+            //ary.splice(0, 1); 
+
+			////removes 2 elements from index 1 and returns those two in the form of ary.
+            //var removed = ary.splice(1, 2); 
+            //alert(removed);
+
+			////removes 2 elements from index 1 and adds "Win" at index 1
+            //ary.splice(1, 2, "Win"); 
+
+            ////removes 2 elements from index 1 and adds "Win" and "Dhan" from index 1
+			//ary.splice(1, 2, "Win", "Dhan"); 
+
+            ////remove 0 elements from index 2 and adds "Win" and "Dhan" from index 2 (nothing but inserting)
+			//ary.splice(2, 0, "Win", "Dhan"); 
+
+			////remove 0 elements from last-1 index and inserts "Win" and "Dhan"
+            ary.splice(-1, 0, "Win", "Dhan"); 
+			
+            DisplayAryResults(ary);
+        }
+
+        function DoSlice1() {
+			////extracts elements starting from index 2 to 5-1 (output: 30, 40, "chat")
+            //var ary2 = ary.slice(2, 5); 
+			
+			////take all elements from index 2
+            //var ary2 = ary.slice(2); 
+			
+			var ary2 = ary.slice(); //clones all elements
+            DisplayAryResults(ary2);
+        }
+
+        function DoReverse() {
+            ary.reverse();
+            DisplayAryResults(ary);
+        }
+
+        function DoSort() {
+            //converts everything to string and uses lexicographical order by default
+			ary.sort(); 
+            DisplayAryResults(ary);
+        }
+
+    </script>
+</head>
+<body>
+<input id="btnShow" type="button" value="Show" onclick="DisplayAryResults(ary);"/>
+<input id="btnAryJoin" type="button" value="Join" onclick="DisplayJoinResult();"/>
+<br>
+<table>
+    <tr>
+        <td>
+            Enter comma separated values:
+        </td>
+        <td>
+            <input id="txtValue" type="text"/>
+        </td>
+        <td>
+            <input id="btnArySplit" type="button" value="Split" onclick="DoArySplit();"/>
+        </td>
+    </tr>
+</table>
+<input id="btnArySplice1" type="button" value="Splice 1" onclick="DoSplice1();"/>
+<input id="btnArySlice1" type="button" value="Slice 1" onclick="DoSlice1();"/>
+<input id="btnAryReverse" type="button" value="Reverse" onclick="DoReverse();"/>
+<input id="btnArySort" type="button" value="Sort" onclick="DoSort();"/>
+<hr>
+<div id="AryItems"></div>
+</body>
+</html>

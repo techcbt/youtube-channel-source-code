@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Functions and declarations
+
+        //basic function with no parameters
+        function ShowMsg() {
+            alert("This is a message");
+        }
+
+        //basic function with parameters
+        function DispSum(a, b) {
+            alert("Sum = " + (a + b).toString());
+        }
+
+        //basic function with 'n' (any number) parameters
+        function ShowSum() {
+            var s = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                s += s + arguments[i];
+            }
+            alert("Total Sum = " + s.toString());
+        }
+
+        //basic function returning value
+        function GetDifference(a, b) {
+            var c = 0;
+            c = a - b;
+            return (c);
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="Show Message" onclick="ShowMsg();"/><br>
+<input type="button" value="Show Sum" onclick="DispSum(10,20);"/><br>
+<input type="button" value="Show Total Sum" onclick="ShowSum(10,20,30,40,50);"/><br>
+<input type="button" value="Show Difference" onclick="alert('Difference = ' + GetDifference(20, 10).toString());"/><br>
+</body>
+</html>

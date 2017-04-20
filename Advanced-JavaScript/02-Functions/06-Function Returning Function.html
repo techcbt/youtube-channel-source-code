@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Function returning a (nested or inner) function
+
+        function doProcess(a, b) {
+
+            function dispSum() {
+                alert("Sum = " + (a + b).toString());
+            }
+
+            function dispDifference() {
+                alert("Difference = " + (a - b).toString());
+            }
+
+            dispSum(); //first: calls dispSum during the execution of doProcess
+
+            //second: returns function (as return value)
+            return dispDifference; //note that it is not dispDifference() - no paranthesis
+
+            //you can also do the same using either of the following:
+            //method 1:
+            //return function dispDifference() {
+            //    alert("Difference = " + (a - b).toString());
+            //}
+            //method 2 (anonymous function):
+            //return function() {
+            //    alert("Difference = " + (a - b).toString());
+            //}
+
+        }
+
+        //displays sum and
+        //gets dispDifference (return value from doProcess) function assigned to 'a'
+        var a = doProcess(10, 20);
+        alert("after returning...");
+
+        a(); //calls "dispDifference" and displays difference
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

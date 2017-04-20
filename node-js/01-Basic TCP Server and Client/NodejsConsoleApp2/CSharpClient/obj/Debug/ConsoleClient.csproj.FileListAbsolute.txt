@@ -1,0 +1,6 @@
+C:\Samples\NodejsConsoleApp2\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Samples\NodejsConsoleApp2\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Samples\NodejsConsoleApp2\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Samples\NodejsConsoleApp2\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Samples\NodejsConsoleApp2\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Samples\NodejsConsoleApp2\ConsoleClient\obj\Debug\ConsoleClient.pdb

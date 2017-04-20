@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Self-Invoking Functions
+
+        //basic self-invoking function (with no parameters)
+        //executes instantaneously
+        (function () {
+            alert("this is a message");
+        })();
+
+        //self-invoking function with parameters
+        //executes instantaneously
+        (function (a, b) {
+            alert("Sum = " + (a + b).toString());
+        })(10, 20);
+
+        //self-invoking function 'n' parameters
+        //executes instantaneously
+        (function () {
+            var s = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                s += s + arguments[i];
+            }
+            alert("Total Sum = " + s.toString());
+        })(10, 20, 30, 40, 50);
+
+        //self-invoking function returning value
+        //executes instantaneously
+        alert("Difference = " +
+                (function (a, b) {
+                    var c = 0;
+                    c = a - b;
+                    return (c);
+                })(20, 10).toString());
+
+    </script>
+</head>
+<body>
+You should have experienced a couple of alerts by now!
+</body>
+</html>

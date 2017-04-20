@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+
+        //First Array (containing one employee row of information)
+        var emp1 = [];
+        emp1["Empno"] = 1001;
+        emp1["Name"] = "Jag";
+        emp1["Sal"] = 5400.00;
+        emp1["Dept"] = "Accounting";
+
+        //Second Array (containing one employee row of information)
+        var emp2 = [];
+        emp2["Empno"] = 1002;
+        emp2["Name"] = "Chat";
+        emp2["Sal"] = 2500.00;
+        emp2["Dept"] = "Production";
+
+        //Third Array (containing one employee row of information)
+        var emp3 = [];
+        emp3["Empno"] = 1003;
+        emp3["Name"] = "Win";
+        emp3["Sal"] = 7400.00;
+        emp3["Dept"] = "Sales";
+
+        //Fourth Array (containing one employee row of information)
+        var emp4 = [];
+        emp4["Empno"] = 1004;
+        emp4["Name"] = "Dhan";
+        emp4["Sal"] = 3400.00;
+        emp4["Dept"] = "Accounting";
+
+
+        //Nested Array (collection of rows)
+        var emps = [emp1, emp2, emp3, emp4];
+
+        //display all rows in the collection
+        function displayEmps() {
+            var n = emps.length; //no. of rows (items in nested array)
+
+            var ResultsDiv = document.getElementById("ResultsDiv");
+
+            for (var i = 0; i < n; i++) { //for every item (or row) in nested array
+				//get the item in nested array (one emp row or one array of Emp values)
+                var emp = emps[i]; 
+                for (key in emp) {
+					//a new div for every key/value pairs
+                    var NewDiv = document.createElement("div"); 
+                    NewDiv.innerHTML = key + ": " + emp[key];
+                    ResultsDiv.appendChild(NewDiv); //add to results
+                }
+				//a break tag to make a diff.
+                var NewBr = document.createElement("br"); 
+                ResultsDiv.appendChild(NewBr);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="Show Emps" onclick="displayEmps();"/>
+<hr>
+<div id="ResultsDiv"></div>
+
+</body>
+</html>

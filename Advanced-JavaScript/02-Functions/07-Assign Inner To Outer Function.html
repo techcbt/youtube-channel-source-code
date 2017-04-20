@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: Assigning an inner function to outer function
+
+        function doProcess(a, b) {
+
+            function dispSum() {
+                alert("Sum = " + (a + b).toString());
+            }
+
+            //first: calls dispSum during the execution of doProcess
+            dispSum(); //executes only once in its life time.
+
+            //second: replaces doProcess with new definition
+            //any subsequent call to doProcess would execute the following
+            doProcess = function (a, b) {
+                alert("Difference = " + (a - b).toString());
+            }
+
+        }
+
+        doProcess(10, 20); //displays "Sum = 30" and replaces the definition of doProcess with new one.
+        doProcess(10, 20); //displays "Difference = -10"
+        doProcess(10, 30); //displays "Difference = -20"
+        doProcess(10, 40); //displays "Difference = -30"
+    </script>
+</head>
+<body>
+
+</body>
+</html>

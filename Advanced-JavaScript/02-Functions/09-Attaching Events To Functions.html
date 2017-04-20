@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script>
+        //DEMO: attaching events dynamically to functions (could also be anonymous)
+
+        function AttachEvent() {
+            var btn = document.getElementById("btnDummy"); //get hold of dummy button
+            if (btn) { //if button exists
+                btn.onclick = function () { //this need not be anonymous
+                    alert("Hey, I am functional");
+                };
+                btn.value = "Not dummy any more.  Click on this to test"; //modify caption
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input id="btnDummy" type="button"
+       value="This is a dummy button.  Click on the following button to make it functional"/><br>
+<input type="button"
+       value="Attach an event and make above button functional" onclick="AttachEvent();"/>
+</body>
+</html>
